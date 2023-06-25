@@ -15,7 +15,7 @@ public class Homework4 {
 
         int[] array1 = {100, 112, 256, 349, 770};
         int[] array2 = {72, 86, 113, 119, 265, 445, 892};
-        int k = 7;
+        int k = 0;
         System.out.println("Элемент с индексом " + k+ ": "+ findElement(array1, array2, k));
     }
 
@@ -26,33 +26,34 @@ public class Homework4 {
 
                 while (i < array1.length && j < array2.length) {
                     if (array1[i] < array2[j]) {
-                        count++;
                         if (count == k) {
                             return array1[i];
                         }
-                        i++;
-                    } else {
                         count++;
+                        i++;
+
+                    } else {
                         if (count == k) {
                             return array2[j];
                         }
+                        count++;
                         j++;
                     }
                 }
 
                 while (i < array1.length) {
-                    count++;
                     if (count == k) {
                         return array1[i];
                     }
+                    count++;
                     i++;
                 }
 
                 while (j < array2.length) {
-                    count++;
                     if (count == k) {
                         return array2[j];
                     }
+                    count++;
                     j++;
                 }
 
